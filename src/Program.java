@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Program {
@@ -16,6 +17,9 @@ public class Program {
 //        for (int i = 0; i < number+1; i++) {
 //            Writer.writerFile(i);
 //        }
-        Reader.readerFile();
+        ArrayList<Integer> listNumber= Reader.readerFile();
+        for(int number: listNumber){
+            System.out.println(number);
+        }
     }
 }

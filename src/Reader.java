@@ -1,4 +1,6 @@
+import java.awt.*;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Reader {
@@ -9,20 +11,21 @@ public class Reader {
         System.out.println(" Name file: ");
         path=path+input.nextLine();
     }
-    public static void readerFile() throws FileNotFoundException,IOException{
+    public static ArrayList<Integer> readerFile() throws FileNotFoundException,IOException{
         setPath();
         File file= new File(path);
         FileInputStream fileInputStream= new FileInputStream(file);
-        if (!file.exists()){
-            System.out.println("No exist file");
-            return;
-        }
+//        if (!file.exists()){
+//            System.out.println("No exist file");
+//            return;
+//        }
 
         DataInputStream dataInputStream= new DataInputStream(fileInputStream);
-
         int value;
+        ArrayList<Integer> list =new ArrayList<>();
         while((value = dataInputStream.read())!= -1){
-            System.out.println(value);
+            list.add(value);
         }
+        return list;
     }
 }
